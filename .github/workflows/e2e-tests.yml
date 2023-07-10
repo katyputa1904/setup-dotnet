@@ -481,3 +481,14 @@ jobs:
       - name: Verify dotnet (higher version)
         shell: pwsh
         run: __tests__/verify-dotnet.ps1 -Patterns "^${{ matrix.lower-version }}$", "^${{ matrix.higher-version }}$"
+- name: Mondoo Action
+  # You may pin to the exact commit or the version.
+  # uses: mondoohq/actions@3a676646294bf55dc54d6c6b56e6567908f7f9b5
+  uses: mondoohq/actions@v1.0.0
+  with:
+    # Additional arguments to pass to cnspec client.
+    args: # optional
+    # Sets the log level: error, warn, info, debug, trace (default "info")
+    log-level: # optional, default is info
+    # Base64 encoded service account credentials used to authenticate with Mondoo Platform
+    service-account-credentials: # optional
